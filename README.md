@@ -19,10 +19,10 @@
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'carlab',
-        'USER': 'ggyy',
-        'PASSWORD': 'samsung',
-        'HOST': '192.168.1.240',
+        'NAME': '*****',
+        'USER': '****',
+        'PASSWORD': '*******',
+        'HOST': 'ip',
         'PORT': '3306',
     }
 }
