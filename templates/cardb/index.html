@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
-<body>
-<h1>{{ welcome }}</h1>
-</body>
-</html>
+{% extends 'adminlte/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+  {% block page_name %}首页{% endblock %}
+  {% block content %}
+      {{ welcome }}
+  {% endblock %}
