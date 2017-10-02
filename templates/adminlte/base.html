@@ -2,6 +2,9 @@
 {% block title_outer %}
     <title>{% block title %}{{ site.name }}{% endblock %}</title>
 {% endblock %}
+{% block nav_header %}
+    {% include 'adminlte/lib/_main_header.html' %}
+{% endblock %}
 
 {% block content_header %}
     <section class="content-header">
