@@ -5,5 +5,5 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'cardb/index.html', context={
                     'title': '汽车Lab',
-                    'welcome': '欢迎访问汽车实验室首页！'
+                    'welcome': '欢迎访问汽车实验室CarLab首页！'
             })
