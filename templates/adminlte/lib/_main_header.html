@@ -1,18 +1,20 @@
+{% load static %}
 {% load adminlte_helpers i18n %}
 <header class="main-header">
     <!-- Logo -->
     {% block logo %}
     <a href="{% block logo_href %}/{% endblock %}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini">{% block logo_text_small %}<b>A</b>LTE{% endblock %}</span>
+        <span class="logo-mini">{% block logo_text_small %}<b>C</b>Lab{% endblock %}</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg">{% block logo_text %}<b>Car</b>LTE{% endblock %}</span>
+        <span class="logo-lg">{% block logo_text %}<b>Car</b>Lab{% endblock %}</span>
     </a>
     {% endblock %}
 
     <!-- Header Navbar: style can be found in header.less -->
     {% block nav_bar %}
     <nav class="navbar navbar-static-top">
+
         <!-- Sidebar toggle button-->
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
@@ -21,7 +23,8 @@
             <span class="icon-bar"></span>
         </a>
 
-        <!-- Navbar Right Menu -->
+        <!-- Navbar Right Menu 右部菜单-->
+        {% block nav_custom_menu %}
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
             <!-- Messages: style can be found in dropdown.less-->
@@ -40,7 +43,7 @@
                       <a href="#">
                         <div class="pull-left">
                           <!-- User Image -->
-                          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                          <img src="{% static "admin-lte/dist/img/user2-160x160.jpg" %} " class="img-circle" alt="User Image">
                         </div>
                         <!-- Message title and timestamp -->
                         <h4>
@@ -125,14 +128,14 @@
               <!-- Menu Toggle Button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
-                <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                <img src="{% static "admin-lte/dist/img/user2-160x160.jpg" %} " class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                 <span class="hidden-xs">Alexander Pierce</span>
               </a>
               <ul class="dropdown-menu">
                 <!-- The user image in the menu -->
                 <li class="user-header">
-                  <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                  <img src="{% static "admin-lte/dist/img/user2-160x160.jpg" %} " class="img-circle" alt="User Image">
 
                   <p>
                     Alexander Pierce - Web Developer
@@ -168,7 +171,7 @@
 
           </ul>
         </div>
-
+{% endblock %}
 
     </nav>
     {% endblock %}
