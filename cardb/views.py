@@ -1,9 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from .models import Manufacturer
 
 # Create your views here.
 def index(request):
-    return render(request, 'cardb/index.html', context={
-                    'title': '汽车Lab',
-                    'welcome': '欢迎访问汽车实验室CarLab首页！'
-            })
+    manufacturer_list = Manufacturer.objects.all().order_by('id')
+    return render(request, 'cardb/index.html', context={'manufacturer_list': manufacturer_list})
