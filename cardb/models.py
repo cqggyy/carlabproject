@@ -7,7 +7,7 @@ class Manufacturer(models.Model):
     name_cn = models.CharField(max_length=100, blank=True)
     logo = models.CharField(max_length=250, blank=True)
     country = models.CharField(max_length=20, blank=True)
-    status = models.BooleanField()
+    status = models.BooleanField(default=1)
     create_year = models.CharField(max_length=4, blank=True)
 
 
