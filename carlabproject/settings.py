@@ -42,8 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'user', #注册用户应用
     'cardb',  #注册cardb应用
 ]
+
+AUTH_USER_MODEL = "user.UserProfile"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
