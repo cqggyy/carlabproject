@@ -10,6 +10,9 @@ class Manufacturer(models.Model):
     status = models.BooleanField(default=1)
     create_year = models.CharField(max_length=4, blank=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Carmodel(models.Model):
     name = models.CharField(max_length=20)
@@ -21,6 +24,10 @@ class Carmodel(models.Model):
     brochurename = models.CharField(max_length=250, blank=True)
     releasedate = models.DateField(blank=True)
     marketlocation = models.CharField(max_length=20, blank=True)
+
+    def __str__(self):
+        return self.name
+
 
 class Car(models.Model):
     name = models.CharField(max_length=20)

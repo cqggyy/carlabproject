@@ -10,5 +10,6 @@ class UserProfile(AbstractUser):
     address = models.CharField(max_length=100, default="")
     mobile = models.CharField(max_length=11, null=True, blank=True)
     headico = models.ImageField(upload_to="media/headico/%Y/%M", default="media/headico/default.png", max_length=100)
+    
     class Meta:
         db_table = 'auth_user'
