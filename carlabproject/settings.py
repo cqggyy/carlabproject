@@ -26,9 +26,12 @@ SECRET_KEY = 'g7yd%@1mzhq^w5arr=rbg2t=6#!d$up&-ao#1@589x461-k@t0'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+AUTHENTICATION_BACKENDS = (
+    'user.views.CustomBackend',
+)
 
 # Application definition
+
 
 INSTALLED_APPS = [
     # The general purpose templates
@@ -116,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
 TIME_ZONE = 'UTC'
 
