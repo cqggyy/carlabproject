@@ -1,2 +1,11 @@
 {% extends 'adminlte/login.html' %}
 {% block logo_text %}<b>Car</b>Lab{% endblock %}
+{% block login_errors %}
+
+        {% for field in login_form %}
+            {% if field.errors %}
+            <div class="alert alert-danger">  {{ field.label_tag }} {{ field.errors }} </div>
+            {% endif %}
+        {% endfor %}
+
+{% endblock login_errors %}

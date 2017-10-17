@@ -13,20 +13,28 @@
         {% endblock %}
         <!-- /.login-logo -->
         <div class="login-box-body">
-            {% block login_errors %}
-                    {% for field in login_form %}
-                        {% if field.errors %}
-                           {{ field.label_tag }} {{ field.errors }}
-                        {% endif %}
-                    {% endfor %}
+          {% block login_errors %}
+             {% if login_form.errors and not login_form.non_field_errors %}
+                 <p class="alert alert-danger">
+                     {% if login_form.errors.items|length == 1 %}{% trans "Please correct the error below." %}{% else %}
+                         {% trans "Please correct the errors below." %}{% endif %}
+                 </p>
+             {% endif %}
 
-            {% endblock login_errors %}
+             {% if login_form.non_field_errors %}
+                 {% for error in login_form.non_field_errors %}
+                     <p class="alert alert-danger">
+                         {{ error }}
+                     </p>
+                 {% endfor %}
+             {% endif %}
+         {% endblock login_errors %}
 
             {% block login_form %}
                 <form action="/login/" method="post" autocomplete="off">
                     {% csrf_token %}
                     {% if message %}
-                        <p class="login-box-msg" style="color: red;">{{ message }}</p>
+                        <div class="alert alert-danger">{{ message }}</div>
                     {% endif %}
                     <div class="form-group has-feedback">
                         <input name="username" class="form-control" placeholder="User or Email">
