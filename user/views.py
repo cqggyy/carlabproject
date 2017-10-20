@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.contrib.auth import authenticate, login
+from django.shortcuts import render, HttpResponseRedirect
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.backends import ModelBackend
 from django.db.models import Q
 from django.views.generic.base import View
@@ -7,6 +7,8 @@ from django.views.generic.base import View
 from .models import UserProfile
 from .forms import LoginForm
 
+
+# Create your views here.
 class Login_view(View):
 	def get(self, request):
 		return render(request, 'user/login.html')
@@ -24,7 +26,11 @@ class Login_view(View):
 		else:
 			return render(request, 'user/login.html',{"login_form":login_form})
 
-# Create your views here.
+class Logout_view(View):
+	def get(self, request):
+		logout(request)
+		from django.core.urlresolvers import reverse
+		return HttpResponseRedirect(reverse("login"))
 
 class CustomBackend(ModelBackend):
 	def authenticate(self, username=None, password=None, **kwargs):

@@ -2,6 +2,9 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Manufacturer, Carmodel
 
+from django.contrib.auth.decorators import login_required#登陆后才能进入系统的模块
+@login_required  #登陆后才能进入系统
+
 
 # Create your views here.
 def index(request):
