@@ -9,3 +9,7 @@
         {% endfor %}
 
 {% endblock login_errors %}
+{% block login_forget %}
+    <a href="#">I forgot my password</a><br>
+    <a href="{% url 'register' %}" class="text-center">Register a new membership</a>
+{% endblock login_forget %}

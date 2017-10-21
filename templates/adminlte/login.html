@@ -8,11 +8,12 @@
         {% block logo %}
         <div class="login-logo">
             {# Mirrors block names used in _main_header.html #}
-            <a href="{% block logo_href %}/{% endblock %}">{% block logo_text %}<b>Admin</b>LTE{% endblock %}</a>
+            <a href="{% block logo_href %}/login/{% endblock %}">{% block logo_text %}<b>Admin</b>LTE{% endblock %}</a>
         </div>
         {% endblock %}
         <!-- /.login-logo -->
         <div class="login-box-body">
+          <p class="login-box-msg">Sign in to start your session</p>
           {% block login_errors %}
              {% if login_form.errors and not login_form.non_field_errors %}
                  <p class="alert alert-danger">
@@ -53,7 +54,8 @@
                     </div>
                 </form>
             {% endblock login_form %}
-
+            {% block login_forget %}   {% endblock login_forget %}
         </div>
+
     </div>
 {% endblock %}

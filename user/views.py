@@ -9,6 +9,12 @@ from .forms import LoginForm
 
 
 # Create your views here.
+class Register_view(View):
+	def get(self, request):
+		return render(request, "user/register.html", {})
+
+
+
 class Login_view(View):
 	def get(self, request):
 		return render(request, 'user/login.html')
