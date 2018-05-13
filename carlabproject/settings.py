@@ -93,7 +93,7 @@ DATABASES = {
         'NAME': 'carlab',
         'USER': 'ggyy',
         'PASSWORD': 'samsung',
-        'HOST': '192.168.1.240',
+        'HOST': '192.168.1.210',
         'PORT': '3306',
     }
 }
