@@ -1,20 +1,20 @@
 from django.contrib import admin
-from .models import Manufacturer, Carmodel, Car
+from .models import Carmaker, Carmodel, Car
 
 # Register your models here.
 
 
-class ManufacturerAdmin(admin.ModelAdmin):
+class CarmakerAdmin(admin.ModelAdmin):
 	list_display = ['id', 'name', 'name_cn', 'create_year', 'status']
 
 class CarmodelAdmin(admin.ModelAdmin):
-	list_display = ['id', 'name', 'name_cn', 'manufacturer', 'modelyear']
+	list_display = ['id', 'name', 'name_cn', 'carmaker', 'releaseyear']
 
 class CarAdmin(admin.ModelAdmin):
-	list_display = ['id', 'name', 'name_cn', 'carmodel', 'manufacturer', 'wheelbase', 'modelyear','price']
+	list_display = ['id', 'name', 'name_cn', 'carmodel', 'carmaker', 'wheelbase', 'modelyear','marketlocation']
 
 
 
-admin.site.register(Manufacturer, ManufacturerAdmin)
+admin.site.register(Carmaker, CarmakerAdmin)
 admin.site.register(Carmodel, CarmodelAdmin)
 admin.site.register(Car, CarAdmin)

@@ -26,9 +26,6 @@ SECRET_KEY = 'g7yd%@1mzhq^w5arr=rbg2t=6#!d$up&-ao#1@589x461-k@t0'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-AUTHENTICATION_BACKENDS = (
-    'user.views.CustomBackend',
-)
 
 # Application definition
 
@@ -49,8 +46,11 @@ INSTALLED_APPS = [
     'cardb',  #注册cardb应用
 ]
 
-AUTH_USER_MODEL = "user.UserProfile"
+#AUTH_USER_MODEL = "user.UserProfile"
 
+
+LOGIN_REDIRECT_URL = 'cardb' 
+LOGOUT_REDIRECT_URL = 'login'
 LOGIN_URL = 'login'
 
 MIDDLEWARE = [
@@ -90,11 +90,11 @@ WSGI_APPLICATION = 'carlabproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'carlab',
+        'NAME': 'carlabsystem',
         'USER': 'ggyy',
         'PASSWORD': 'samsung',
-        'HOST': '192.168.1.240',
-        'PORT': '3306',
+        'HOST': '192.168.1.202',
+        'PORT': '33060',
     }
 }
 
