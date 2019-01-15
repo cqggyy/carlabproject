@@ -1,7 +1,7 @@
-from django.conf.urls import url
+from django.urls import path
 from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    url(r'^cardb/', views.index, name='cardb'),
+    path('cardb/', views.index, name='cardb'),
 ]

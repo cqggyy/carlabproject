@@ -33,7 +33,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # The general purpose templates
     'django_adminlte',
-
     # Optional: Skin for the admin interface
     'django_adminlte_theme',
     'django.contrib.admin',
